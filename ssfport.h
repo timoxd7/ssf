@@ -1,3 +1,5 @@
+// clang-format off
+
 /* --------------------------------------------------------------------------------------------- */
 /* Small System Framework                                                                        */
 /*                                                                                               */
@@ -329,13 +331,13 @@ enum SSFSMEventList
 #endif
 
 /* The maximum total size in bytes of a message to be encoded or decoded */
-#define SSF_RS_MAX_MESSAGE_SIZE (1024)
+#define SSF_RS_MAX_MESSAGE_SIZE (5)
 #if SSF_RS_MAX_MESSAGE_SIZE > 2048
 #error SSFRS invalid SSF_RS_MAX_MESSAGE_SIZE.
 #endif
 
 /* The maximum number of bytes that will be encoded with up to SSF_RS_MAX_SYMBOLS bytes */
-#define SSF_RS_MAX_CHUNK_SIZE (127u)
+#define SSF_RS_MAX_CHUNK_SIZE (5)
 #if SSF_RS_MAX_CHUNK_SIZE > 253
 #error SSFRS invalid SSF_RS_MAX_CHUNK_SIZE.
 #endif
@@ -349,7 +351,7 @@ enum SSFSMEventList
 
 /* The maximum number of symbols in bytes that will encode up to SSF_RS_MAX_CHUNK_SIZE bytes */
 /* Reed-Solomon can correct SSF_RS_MAX_SYMBOLS/2 bytes with errors in a message */
-#define SSF_RS_MAX_SYMBOLS (8ul)
+#define SSF_RS_MAX_SYMBOLS (3ul)
 #if (SSF_RS_MAX_SYMBOLS < 2) || (SSF_RS_MAX_SYMBOLS > 254)
 #error SSFRS Invalid SSF_RS_MAX_SYMBOLS.
 #endif
